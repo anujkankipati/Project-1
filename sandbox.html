@@ -9,19 +9,20 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #101820;
+            background-color: #0b1320;
             color: white;
         }
 
         header {
             text-align: center;
-            padding: 40px;
-            background-color: #1d2d3a;
+            padding: 30px;
+            background-color: #14213d;
         }
 
         main {
-            width: 80%;
-            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
         }
 
         .dashboard {
@@ -31,83 +32,716 @@
         }
 
         .card {
-            background-color: #1d2d3a;
-            padding: 25px;
+            background-color: #1b263b;
+            padding: 20px;
             border-radius: 10px;
-            text-align: center;
+        }
+
+        .progress-container {
+            background-color: #394867;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #4cc9f0;
+            transition: width 1.5s;
+        }
+
+        .controls {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #1b263b;
+            border-radius: 10px;
         }
 
         button {
-            margin-top: 30px;
-            padding: 12px 20px;
-            font-size: 16px;
+            padding: 12px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 15px;
         }
 
-        #message {
-            margin-top: 20px;
-            font-size: 18px;
+        /* ASTEROID GAME */
+
+        .asteroid-section {
+            margin-top: 30px;
+            background-color: #111827;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .space-field {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border: 2px solid #4cc9f0;
+            border-radius: 10px;
+
+            background:
+                radial-gradient(white 1px, transparent 1px),
+                radial-gradient(white 1px, transparent 1px),
+                #020617;
+
+            background-size: 60px 60px, 90px 90px;
+            background-position: 0 0, 30px 30px;
+        }
+
+        .asteroid {
+            position: absolute;
+
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    #b08968,
+                    #7f5539,
+                    #3f2d20
+                );
+
+            border: 3px solid #6f4e37;
+
+            cursor: crosshair;
+
+            animation-name: asteroidMove;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+
+            box-shadow:
+                inset -8px -8px 10px rgba(0, 0, 0, 0.4),
+                0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .asteroid:hover {
+            border-color: red;
+        }
+
+        @keyframes asteroidMove {
+
+            from {
+                left: -80px;
+                transform: rotate(0deg);
+            }
+
+            to {
+                left: calc(100% + 80px);
+                transform: rotate(720deg);
+            }
+        }
+
+        #gameMessage {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* MISSION LOG */
+
+        .mission-log {
+            margin-top: 30px;
+            background-color: #111827;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 150px;
+        }
+
+        .mission-log p {
+            font-family: monospace;
+            margin: 6px 0;
+        }
+
+        #timer {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Space Mission Control</h1>
-        <p>Mission Dashboard</p>
-    </header>
+<header>
 
-    <main>
+    <h1>ORION MISSION CONTROL</h1>
 
-        <h2>Mission Status</h2>
+    <p>Deep Space Exploration Dashboard</p>
 
-        <div class="dashboard">
+</header>
 
-            <div class="card">
-                <h3>Mission</h3>
-                <p>Orion Explorer</p>
-            </div>
 
-            <div class="card">
-                <h3>Distance</h3>
-                <p>384,400 km</p>
-            </div>
+<main>
 
-            <div class="card">
-                <h3>Status</h3>
-                <p>Operational</p>
-            </div>
+    <!-- MISSION DASHBOARD -->
 
-            <div class="card">
-                <h3>Fuel</h3>
-                <p>82%</p>
-            </div>
+    <div class="dashboard">
 
-            <div class="card">
-                <h3>Crew</h3>
-                <p>4 Members</p>
-            </div>
+        <div class="card">
 
-            <div class="card">
-                <h3>Communication</h3>
-                <p>Connected</p>
+            <h3>Mission</h3>
+
+            <p>Orion Explorer</p>
+
+            <p><strong>STATUS: OPERATIONAL</strong></p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Mission Time</h3>
+
+            <p id="timer">00:00:00</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Crew</h3>
+
+            <p>4 astronauts aboard</p>
+
+            <p>All crew systems nominal</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Fuel</h3>
+
+            <p>82%</p>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="fuelBar">
+                </div>
+
             </div>
 
         </div>
 
-        <button onclick="runSystemCheck()">Run System Check</button>
 
-        <p id="message"></p>
+        <div class="card">
 
-    </main>
+            <h3>Oxygen</h3>
 
-    <script>
-        function runSystemCheck() {
-            document.getElementById("message").textContent =
-                "System check complete. All systems operational.";
+            <p>94%</p>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="oxygenBar">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Power</h3>
+
+            <p>76%</p>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="powerBar">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MISSION CONTROLS -->
+
+    <section class="controls">
+
+        <h2>Mission Controls</h2>
+
+        <button onclick="runSystemCheck()">
+            Run System Check
+        </button>
+
+        <button onclick="scanEnvironment()">
+            Scan Environment
+        </button>
+
+        <button onclick="contactEarth()">
+            Contact Earth
+        </button>
+
+    </section>
+
+
+    <!-- ASTEROID DEFENSE GAME -->
+
+    <section class="asteroid-section">
+
+        <h2>Asteroid Defense System</h2>
+
+        <p>
+            Incoming asteroids detected.
+            Click the asteroids before they reach the spacecraft!
+        </p>
+
+
+        <div class="game-info">
+
+            <p>
+                Score:
+                <strong id="score">0</strong>
+            </p>
+
+            <p>
+                Shields:
+                <strong id="shields">100</strong>%
+            </p>
+
+            <button onclick="startGame()">
+                Start Defense System
+            </button>
+
+        </div>
+
+
+        <div
+            class="space-field"
+            id="spaceField">
+        </div>
+
+
+        <p id="gameMessage">
+            Defense system waiting...
+        </p>
+
+    </section>
+
+
+    <!-- MISSION LOG -->
+
+    <section class="mission-log">
+
+        <h2>Mission Log</h2>
+
+        <div id="log">
+
+            <p>
+                > Mission control initialized.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+    /* --------------------------
+       MISSION TIMER
+    -------------------------- */
+
+    let seconds = 0;
+
+
+    function updateTimer() {
+
+        seconds++;
+
+
+        const hours =
+            Math.floor(seconds / 3600);
+
+
+        const minutes =
+            Math.floor((seconds % 3600) / 60);
+
+
+        const secs =
+            seconds % 60;
+
+
+        document.getElementById("timer").textContent =
+
+            String(hours).padStart(2, "0")
+            + ":"
+            + String(minutes).padStart(2, "0")
+            + ":"
+            + String(secs).padStart(2, "0");
+
+    }
+
+
+    setInterval(updateTimer, 1000);
+
+
+
+    /* --------------------------
+       MISSION LOG
+    -------------------------- */
+
+    function addLog(message) {
+
+        const log =
+            document.getElementById("log");
+
+
+        const entry =
+            document.createElement("p");
+
+
+        entry.textContent =
+            "> " + message;
+
+
+        log.appendChild(entry);
+
+    }
+
+
+
+    function runSystemCheck() {
+
+        addLog(
+            "Running spacecraft diagnostic..."
+        );
+
+
+        setTimeout(function() {
+
+            addLog(
+                "System check complete. All systems operational."
+            );
+
+        }, 1000);
+
+    }
+
+
+
+    function scanEnvironment() {
+
+        addLog(
+            "Scanning surrounding space..."
+        );
+
+
+        setTimeout(function() {
+
+            addLog(
+                "WARNING: Asteroid activity detected."
+            );
+
+        }, 1000);
+
+    }
+
+
+
+    function contactEarth() {
+
+        addLog(
+            "Attempting communication with Earth..."
+        );
+
+
+        setTimeout(function() {
+
+            addLog(
+                "Communication established."
+            );
+
+        }, 1000);
+
+    }
+
+
+
+    /* --------------------------
+       ASTEROID GAME
+    -------------------------- */
+
+    let score = 0;
+
+    let shields = 100;
+
+    let gameRunning = false;
+
+    let asteroidSpawner;
+
+
+
+    function startGame() {
+
+        if (gameRunning) {
+            return;
         }
-    </script>
+
+
+        score = 0;
+
+        shields = 100;
+
+        gameRunning = true;
+
+
+        document.getElementById("score").textContent =
+            score;
+
+
+        document.getElementById("shields").textContent =
+            shields;
+
+
+        document.getElementById("gameMessage").textContent =
+            "ASTEROIDS INCOMING!";
+
+
+        addLog(
+            "Asteroid defense system activated."
+        );
+
+
+        asteroidSpawner =
+            setInterval(createAsteroid, 1000);
+
+    }
+
+
+
+    function createAsteroid() {
+
+        if (!gameRunning) {
+            return;
+        }
+
+
+        const field =
+            document.getElementById("spaceField");
+
+
+        const asteroid =
+            document.createElement("div");
+
+
+        asteroid.className =
+            "asteroid";
+
+
+        const size =
+            Math.floor(Math.random() * 35) + 35;
+
+
+        asteroid.style.width =
+            size + "px";
+
+
+        asteroid.style.height =
+            size + "px";
+
+
+        const maxTop =
+            field.clientHeight - size;
+
+
+        asteroid.style.top =
+            Math.random() * maxTop + "px";
+
+
+        const speed =
+            Math.random() * 4 + 4;
+
+
+        asteroid.style.animationDuration =
+            speed + "s";
+
+
+        asteroid.onclick =
+            function() {
+
+                destroyAsteroid(
+                    asteroid
+                );
+
+            };
+
+
+        asteroid.addEventListener(
+            "animationend",
+
+            function() {
+
+                asteroidMissed(
+                    asteroid
+                );
+
+            }
+        );
+
+
+        field.appendChild(
+            asteroid
+        );
+
+    }
+
+
+
+    function destroyAsteroid(asteroid) {
+
+        if (!gameRunning) {
+            return;
+        }
+
+
+        score += 10;
+
+
+        document.getElementById("score").textContent =
+            score;
+
+
+        asteroid.remove();
+
+
+        addLog(
+            "Asteroid destroyed. Score: " + score
+        );
+
+    }
+
+
+
+    function asteroidMissed(asteroid) {
+
+        if (!document.body.contains(asteroid)) {
+            return;
+        }
+
+
+        asteroid.remove();
+
+
+        shields -= 10;
+
+
+        if (shields < 0) {
+            shields = 0;
+        }
+
+
+        document.getElementById("shields").textContent =
+            shields;
+
+
+        addLog(
+            "Asteroid impact! Shields at "
+            + shields
+            + "%."
+        );
+
+
+        if (shields <= 0) {
+
+            endGame();
+
+        }
+
+    }
+
+
+
+    function endGame() {
+
+        gameRunning = false;
+
+
+        clearInterval(
+            asteroidSpawner
+        );
+
+
+        document.getElementById("gameMessage").textContent =
+
+            "MISSION FAILED — FINAL SCORE: "
+            + score;
+
+
+        addLog(
+            "Shield failure. Asteroid defense system offline."
+        );
+
+
+        const asteroids =
+            document.querySelectorAll(".asteroid");
+
+
+        asteroids.forEach(function(asteroid) {
+
+            asteroid.remove();
+
+        });
+
+    }
+
+
+
+    /* --------------------------
+       PAGE STARTUP
+    -------------------------- */
+
+    window.onload = function() {
+
+        document.getElementById("fuelBar")
+            .style.width = "82%";
+
+
+        document.getElementById("oxygenBar")
+            .style.width = "94%";
+
+
+        document.getElementById("powerBar")
+            .style.width = "76%";
+
+    };
+
+</script>
 
 </body>
 
