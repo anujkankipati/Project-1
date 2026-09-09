@@ -1100,3 +1100,157 @@ main {
     }
 
 }
+
+/* -----------------------------------
+   ACTIVITIES PAGE
+----------------------------------- */
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+    padding: 30px 0 70px;
+
+    border-top: 1px solid #24242d;
+}
+
+
+/* ACTIVITY CARDS */
+
+.activity-card {
+    background-color: #15151d;
+
+    border: 1px solid #292933;
+
+    border-radius: 14px;
+
+    padding: 32px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.activity-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #6d28d9;
+}
+
+
+.activity-card h2 {
+    color: #ffffff;
+
+    font-size: 1.5rem;
+
+    margin: 10px 0 18px;
+}
+
+
+.activity-card p {
+    color: #a3a3ad;
+
+    line-height: 1.7;
+
+    margin-bottom: 16px;
+}
+
+
+/* NBA / NFL LINKS */
+
+.activity-links {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+.activity-links a {
+    color: #c4b5fd;
+
+    background-color: #20182c;
+
+    border: 1px solid #452182;
+
+    border-radius: 6px;
+
+    padding: 7px 14px;
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.activity-links a:hover {
+    background-color: #2e1a47;
+
+    border-color: #6d28d9;
+}
+
+
+/* BOTTOM SUMMARY SECTION */
+
+.activities-footer {
+    background-color: #15151d;
+
+    border: 1px solid #35224c;
+
+    border-radius: 14px;
+
+    padding: 40px;
+
+    margin-bottom: 80px;
+}
+
+
+.activities-footer h2 {
+    color: #ffffff;
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+}
+
+
+.activities-footer p {
+    color: #a3a3ad;
+
+    max-width: 800px;
+
+    line-height: 1.7;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .activity-card {
+        padding: 24px;
+    }
+
+
+    .activities-footer {
+        padding: 28px;
+    }
+
+}
