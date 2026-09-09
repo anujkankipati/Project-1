@@ -976,6 +976,7 @@ main {
 
 }
 
+
 /* -----------------------------------
    PORTFOLIO PAGE
 ----------------------------------- */
@@ -986,17 +987,20 @@ main {
 
 .page-header h1 {
     font-size: 3rem;
+
     margin-bottom: 12px;
 }
 
 .page-header > p:last-child {
     color: #a3a3ad;
+
     max-width: 650px;
 }
 
 
 .portfolio-project {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     gap: 50px;
@@ -1029,6 +1033,7 @@ main {
     color: #c4b5fd;
 
     margin-top: 24px;
+
     margin-bottom: 10px;
 }
 
@@ -1101,12 +1106,14 @@ main {
 
 }
 
+
 /* -----------------------------------
    ACTIVITIES PAGE
 ----------------------------------- */
 
 .activities-grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
 
     gap: 24px;
@@ -1255,6 +1262,7 @@ main {
 
 }
 
+
 /* -----------------------------------
    QUALIFICATIONS PAGE
 ----------------------------------- */
@@ -1374,7 +1382,6 @@ main {
 
     background-color: #15151d;
 }
-
 
 
 /* RESPONSIVE */

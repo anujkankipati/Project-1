@@ -3,20 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mission Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mission Control | Anuj Kankipati</title>
 
     <style>
+
+        /* -----------------------------------
+           PAGE
+        ----------------------------------- */
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #0b1320;
             color: white;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px;
-            background-color: #14213d;
         }
 
         main {
@@ -25,70 +26,212 @@
             margin: 30px auto;
         }
 
+
+        /* -----------------------------------
+           NAVIGATION
+        ----------------------------------- */
+
+        .sandbox-header {
+            background-color: #09090d;
+
+            border-bottom: 1px solid #24242d;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        .sandbox-navbar {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 18px 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .sandbox-logo {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background-color: #6d28d9;
+
+            color: white;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .sandbox-nav-links {
+            display: flex;
+
+            gap: 28px;
+        }
+
+        .sandbox-nav-links a {
+            color: #a9a9b3;
+
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+        }
+
+        .sandbox-nav-links a:hover,
+        .sandbox-nav-links .active {
+            color: #a78bfa;
+        }
+
+
+        /* -----------------------------------
+           MISSION HEADER
+        ----------------------------------- */
+
+        .mission-header {
+            text-align: center;
+
+            padding: 35px;
+
+            background-color: #14213d;
+        }
+
+        .mission-header h1 {
+            margin-bottom: 8px;
+        }
+
+        .mission-header p {
+            color: #c3c7d1;
+        }
+
+
+        /* -----------------------------------
+           DASHBOARD
+        ----------------------------------- */
+
         .dashboard {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 20px;
         }
 
         .card {
             background-color: #1b263b;
+
             padding: 20px;
+
             border-radius: 10px;
         }
 
         .progress-container {
             background-color: #394867;
+
             height: 20px;
+
             border-radius: 10px;
+
             overflow: hidden;
         }
 
         .progress-bar {
             height: 100%;
+
             width: 0;
+
             background-color: #4cc9f0;
+
             transition: width 1.5s;
         }
 
+        #timer {
+            font-size: 28px;
+
+            font-weight: bold;
+        }
+
+
+        /* -----------------------------------
+           MISSION CONTROLS
+        ----------------------------------- */
+
         .controls {
             margin-top: 30px;
+
             padding: 20px;
+
             background-color: #1b263b;
+
             border-radius: 10px;
         }
 
         button {
             padding: 12px 18px;
+
             margin: 5px;
+
             border: none;
+
             border-radius: 5px;
+
             cursor: pointer;
+
             font-size: 15px;
         }
 
-        /* ASTEROID GAME */
+        button:hover {
+            background-color: #cbd5e1;
+        }
+
+
+        /* -----------------------------------
+           ASTEROID GAME
+        ----------------------------------- */
 
         .asteroid-section {
             margin-top: 30px;
+
             background-color: #111827;
+
             padding: 20px;
+
             border-radius: 10px;
         }
 
         .game-info {
             display: flex;
+
             justify-content: space-between;
+
             flex-wrap: wrap;
+
             gap: 10px;
+
             margin-bottom: 15px;
         }
 
         .space-field {
             position: relative;
+
             height: 400px;
+
             overflow: hidden;
+
             border: 2px solid #4cc9f0;
+
             border-radius: 10px;
 
             background:
@@ -96,8 +239,13 @@
                 radial-gradient(white 1px, transparent 1px),
                 #020617;
 
-            background-size: 60px 60px, 90px 90px;
-            background-position: 0 0, 30px 30px;
+            background-size:
+                60px 60px,
+                90px 90px;
+
+            background-position:
+                0 0,
+                30px 30px;
         }
 
         .asteroid {
@@ -121,7 +269,9 @@
             cursor: crosshair;
 
             animation-name: asteroidMove;
+
             animation-timing-function: linear;
+
             animation-fill-mode: forwards;
 
             box-shadow:
@@ -137,611 +287,812 @@
 
             from {
                 left: -80px;
+
                 transform: rotate(0deg);
             }
 
             to {
                 left: calc(100% + 80px);
+
                 transform: rotate(720deg);
             }
+
         }
 
         #gameMessage {
             text-align: center;
+
             font-size: 20px;
+
             font-weight: bold;
+
             margin-top: 10px;
         }
 
-        /* MISSION LOG */
+
+        /* -----------------------------------
+           AI PROMPT HISTORY
+        ----------------------------------- */
+
+        .prompt-section {
+            margin-top: 30px;
+
+            background-color: #111827;
+
+            padding: 25px;
+
+            border-radius: 10px;
+        }
+
+        .prompt-section h2 {
+            margin-top: 0;
+        }
+
+        .prompt-section > p {
+            color: #c3c7d1;
+        }
+
+        .prompt-box {
+            width: 100%;
+
+            height: 340px;
+
+            box-sizing: border-box;
+
+            margin-top: 15px;
+
+            padding: 18px;
+
+            background-color: #020617;
+
+            color: #d8dee9;
+
+            border: 1px solid #4cc9f0;
+
+            border-radius: 8px;
+
+            font-family: monospace;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            resize: vertical;
+        }
+
+
+        /* -----------------------------------
+           MISSION LOG
+        ----------------------------------- */
 
         .mission-log {
             margin-top: 30px;
+
+            margin-bottom: 40px;
+
             background-color: #111827;
+
             padding: 20px;
+
             border-radius: 10px;
+
             min-height: 150px;
         }
 
         .mission-log p {
             font-family: monospace;
+
             margin: 6px 0;
         }
 
-        #timer {
-            font-size: 28px;
-            font-weight: bold;
-        }
+
+        /* -----------------------------------
+           RESPONSIVE
+        ----------------------------------- */
 
         @media (max-width: 800px) {
+
+            .sandbox-navbar {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .sandbox-nav-links {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+            }
 
             .dashboard {
                 grid-template-columns: 1fr;
             }
 
         }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
+    <!-- NAVIGATION -->
 
-    <h1>ORION MISSION CONTROL</h1>
+    <header class="sandbox-header">
 
-    <p>Deep Space Exploration Dashboard</p>
+        <nav class="sandbox-navbar">
 
-</header>
+            <a
+                class="sandbox-logo"
+                href="index.html">
+                AK
+            </a>
 
+            <div class="sandbox-nav-links">
 
-<main>
+                <a href="index.html">
+                    Home
+                </a>
 
-    <!-- MISSION DASHBOARD -->
+                <a href="portfolio.html">
+                    Portfolio
+                </a>
 
-    <div class="dashboard">
+                <a href="qualifications.html">
+                    Qualifications
+                </a>
 
-        <div class="card">
+                <a href="activities.html">
+                    Activities
+                </a>
 
-            <h3>Mission</h3>
-
-            <p>Orion Explorer</p>
-
-            <p><strong>STATUS: OPERATIONAL</strong></p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Mission Time</h3>
-
-            <p id="timer">00:00:00</p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Crew</h3>
-
-            <p>4 astronauts aboard</p>
-
-            <p>All crew systems nominal</p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Fuel</h3>
-
-            <p>82%</p>
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="fuelBar">
-                </div>
+                <a
+                    class="active"
+                    href="sandbox.html">
+                    Sandbox
+                </a>
 
             </div>
 
-        </div>
+        </nav>
+
+    </header>
 
 
-        <div class="card">
+    <!-- MISSION TITLE -->
 
-            <h3>Oxygen</h3>
+    <section class="mission-header">
 
-            <p>94%</p>
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="oxygenBar">
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Power</h3>
-
-            <p>76%</p>
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="powerBar">
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- MISSION CONTROLS -->
-
-    <section class="controls">
-
-        <h2>Mission Controls</h2>
-
-        <button onclick="runSystemCheck()">
-            Run System Check
-        </button>
-
-        <button onclick="scanEnvironment()">
-            Scan Environment
-        </button>
-
-        <button onclick="contactEarth()">
-            Contact Earth
-        </button>
-
-    </section>
-
-
-    <!-- ASTEROID DEFENSE GAME -->
-
-    <section class="asteroid-section">
-
-        <h2>Asteroid Defense System</h2>
+        <h1>
+            ORION MISSION CONTROL
+        </h1>
 
         <p>
-            Incoming asteroids detected.
-            Click the asteroids before they reach the spacecraft!
+            Deep Space Exploration Dashboard
         </p>
 
+    </section>
 
-        <div class="game-info">
 
-            <p>
-                Score:
-                <strong id="score">0</strong>
-            </p>
+    <main>
 
-            <p>
-                Shields:
-                <strong id="shields">100</strong>%
-            </p>
+        <!-- MISSION DASHBOARD -->
 
-            <button onclick="startGame()">
-                Start Defense System
+        <div class="dashboard">
+
+            <div class="card">
+
+                <h3>
+                    Mission
+                </h3>
+
+                <p>
+                    Orion Explorer
+                </p>
+
+                <p>
+                    <strong>
+                        STATUS: OPERATIONAL
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Mission Time
+                </h3>
+
+                <p id="timer">
+                    00:00:00
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Crew
+                </h3>
+
+                <p>
+                    4 astronauts aboard
+                </p>
+
+                <p>
+                    All crew systems nominal
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Fuel
+                </h3>
+
+                <p>
+                    82%
+                </p>
+
+                <div class="progress-container">
+
+                    <div
+                        class="progress-bar"
+                        id="fuelBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Oxygen
+                </h3>
+
+                <p>
+                    94%
+                </p>
+
+                <div class="progress-container">
+
+                    <div
+                        class="progress-bar"
+                        id="oxygenBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Power
+                </h3>
+
+                <p>
+                    76%
+                </p>
+
+                <div class="progress-container">
+
+                    <div
+                        class="progress-bar"
+                        id="powerBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MISSION CONTROLS -->
+
+        <section class="controls">
+
+            <h2>
+                Mission Controls
+            </h2>
+
+            <button onclick="runSystemCheck()">
+                Run System Check
             </button>
 
-        </div>
+            <button onclick="scanEnvironment()">
+                Scan Environment
+            </button>
+
+            <button onclick="contactEarth()">
+                Contact Earth
+            </button>
+
+        </section>
 
 
-        <div
-            class="space-field"
-            id="spaceField">
-        </div>
+        <!-- ASTEROID DEFENSE GAME -->
 
+        <section class="asteroid-section">
 
-        <p id="gameMessage">
-            Defense system waiting...
-        </p>
-
-    </section>
-
-
-    <!-- MISSION LOG -->
-
-    <section class="mission-log">
-
-        <h2>Mission Log</h2>
-
-        <div id="log">
+            <h2>
+                Asteroid Defense System
+            </h2>
 
             <p>
-                > Mission control initialized.
+                Incoming asteroids detected.
+                Click the asteroids before they reach the spacecraft!
             </p>
 
-        </div>
 
-    </section>
+            <div class="game-info">
 
-</main>
+                <p>
+                    Score:
+                    <strong id="score">
+                        0
+                    </strong>
+                </p>
 
+                <p>
+                    Shields:
+                    <strong id="shields">
+                        100
+                    </strong>%
+                </p>
 
-<script>
+                <button onclick="startGame()">
+                    Start Defense System
+                </button>
 
-    /* --------------------------
-       MISSION TIMER
-    -------------------------- */
+            </div>
 
-    let seconds = 0;
 
+            <div
+                class="space-field"
+                id="spaceField">
+            </div>
 
-    function updateTimer() {
 
-        seconds++;
+            <p id="gameMessage">
+                Defense system waiting...
+            </p>
 
+        </section>
 
-        const hours =
-            Math.floor(seconds / 3600);
 
+        <!-- AI PROMPT HISTORY -->
 
-        const minutes =
-            Math.floor((seconds % 3600) / 60);
+        <section class="prompt-section">
 
+            <h2>
+                AI Prompt History
+            </h2>
 
-        const secs =
-            seconds % 60;
+            <p>
+                These prompts were used to develop the final version
+                of this sandbox page.
+            </p>
 
+            <textarea
+                class="prompt-box"
+                readonly>
+Prompt 1:
+Create a HTML page called sandbox.html that displays a futuristic space mission dashboard. Make sure to only use HTML, inline CSS, and JavaScript. I want to have a title, mission information, several status cards, and a button that performs an interactive action within the file.
 
-        document.getElementById("timer").textContent =
+Prompt 2:
+Can you improve the futuristic space mission dashboard. I want to add animated progress bars for fuel, oxygen, and power, a live mission timer, interactive system controls, a mission log that records button actions, and a more detailed dashboard layout. PLease make sure to keep everything in one HTML file using inline CSS and JavaScript.
 
-            String(hours).padStart(2, "0")
-            + ":"
-            + String(minutes).padStart(2, "0")
-            + ":"
-            + String(secs).padStart(2, "0");
+Prompt 3:
+Add an interactive asteroid defense system to the space mission dashboard. The asteroids should randomly fly across a space area and I want the user to be able to click them to destroy them. Make sure to add a score counter, shield health, a start button, and a game-over state if too many asteroids get through. Keep the existing mission dashboard, timer, resource bars, mission controls, and mission log.
+            </textarea>
 
-    }
+        </section>
 
 
-    setInterval(updateTimer, 1000);
+        <!-- MISSION LOG -->
 
+        <section class="mission-log">
 
+            <h2>
+                Mission Log
+            </h2>
 
-    /* --------------------------
-       MISSION LOG
-    -------------------------- */
+            <div id="log">
 
-    function addLog(message) {
+                <p>
+                    &gt; Mission control initialized.
+                </p>
 
-        const log =
-            document.getElementById("log");
+            </div>
 
+        </section>
 
-        const entry =
-            document.createElement("p");
+    </main>
 
 
-        entry.textContent =
-            "> " + message;
+    <script>
 
+        /* -----------------------------------
+           MISSION TIMER
+        ----------------------------------- */
 
-        log.appendChild(entry);
+        let seconds = 0;
 
-    }
 
+        function updateTimer() {
 
+            seconds++;
 
-    function runSystemCheck() {
 
-        addLog(
-            "Running spacecraft diagnostic..."
-        );
+            const hours =
+                Math.floor(seconds / 3600);
 
 
-        setTimeout(function() {
+            const minutes =
+                Math.floor((seconds % 3600) / 60);
 
-            addLog(
-                "System check complete. All systems operational."
-            );
 
-        }, 1000);
+            const secs =
+                seconds % 60;
 
-    }
 
+            document.getElementById("timer").textContent =
 
+                String(hours).padStart(2, "0")
+                + ":"
+                + String(minutes).padStart(2, "0")
+                + ":"
+                + String(secs).padStart(2, "0");
 
-    function scanEnvironment() {
-
-        addLog(
-            "Scanning surrounding space..."
-        );
-
-
-        setTimeout(function() {
-
-            addLog(
-                "WARNING: Asteroid activity detected."
-            );
-
-        }, 1000);
-
-    }
-
-
-
-    function contactEarth() {
-
-        addLog(
-            "Attempting communication with Earth..."
-        );
-
-
-        setTimeout(function() {
-
-            addLog(
-                "Communication established."
-            );
-
-        }, 1000);
-
-    }
-
-
-
-    /* --------------------------
-       ASTEROID GAME
-    -------------------------- */
-
-    let score = 0;
-
-    let shields = 100;
-
-    let gameRunning = false;
-
-    let asteroidSpawner;
-
-
-
-    function startGame() {
-
-        if (gameRunning) {
-            return;
         }
 
 
-        score = 0;
-
-        shields = 100;
-
-        gameRunning = true;
-
-
-        document.getElementById("score").textContent =
-            score;
-
-
-        document.getElementById("shields").textContent =
-            shields;
-
-
-        document.getElementById("gameMessage").textContent =
-            "ASTEROIDS INCOMING!";
-
-
-        addLog(
-            "Asteroid defense system activated."
-        );
-
-
-        asteroidSpawner =
-            setInterval(createAsteroid, 1000);
-
-    }
+        setInterval(updateTimer, 1000);
 
 
 
-    function createAsteroid() {
+        /* -----------------------------------
+           MISSION LOG
+        ----------------------------------- */
 
-        if (!gameRunning) {
-            return;
+        function addLog(message) {
+
+            const log =
+                document.getElementById("log");
+
+
+            const entry =
+                document.createElement("p");
+
+
+            entry.textContent =
+                "> " + message;
+
+
+            log.appendChild(entry);
+
         }
 
 
-        const field =
-            document.getElementById("spaceField");
+
+        function runSystemCheck() {
+
+            addLog(
+                "Running spacecraft diagnostic..."
+            );
 
 
-        const asteroid =
-            document.createElement("div");
+            setTimeout(function() {
 
-
-        asteroid.className =
-            "asteroid";
-
-
-        const size =
-            Math.floor(Math.random() * 35) + 35;
-
-
-        asteroid.style.width =
-            size + "px";
-
-
-        asteroid.style.height =
-            size + "px";
-
-
-        const maxTop =
-            field.clientHeight - size;
-
-
-        asteroid.style.top =
-            Math.random() * maxTop + "px";
-
-
-        const speed =
-            Math.random() * 4 + 4;
-
-
-        asteroid.style.animationDuration =
-            speed + "s";
-
-
-        asteroid.onclick =
-            function() {
-
-                destroyAsteroid(
-                    asteroid
+                addLog(
+                    "System check complete. All systems operational."
                 );
 
-            };
+            }, 1000);
+
+        }
 
 
-        asteroid.addEventListener(
-            "animationend",
 
-            function() {
+        function scanEnvironment() {
 
-                asteroidMissed(
-                    asteroid
+            addLog(
+                "Scanning surrounding space..."
+            );
+
+
+            setTimeout(function() {
+
+                addLog(
+                    "WARNING: Asteroid activity detected."
                 );
 
+            }, 1000);
+
+        }
+
+
+
+        function contactEarth() {
+
+            addLog(
+                "Attempting communication with Earth..."
+            );
+
+
+            setTimeout(function() {
+
+                addLog(
+                    "Communication established."
+                );
+
+            }, 1000);
+
+        }
+
+
+
+        /* -----------------------------------
+           ASTEROID GAME
+        ----------------------------------- */
+
+        let score = 0;
+
+        let shields = 100;
+
+        let gameRunning = false;
+
+        let asteroidSpawner;
+
+
+
+        function startGame() {
+
+            if (gameRunning) {
+                return;
             }
-        );
 
 
-        field.appendChild(
-            asteroid
-        );
+            score = 0;
 
-    }
+            shields = 100;
 
-
-
-    function destroyAsteroid(asteroid) {
-
-        if (!gameRunning) {
-            return;
-        }
+            gameRunning = true;
 
 
-        score += 10;
+            document.getElementById("score").textContent =
+                score;
 
 
-        document.getElementById("score").textContent =
-            score;
+            document.getElementById("shields").textContent =
+                shields;
 
 
-        asteroid.remove();
+            document.getElementById("gameMessage").textContent =
+                "ASTEROIDS INCOMING!";
 
 
-        addLog(
-            "Asteroid destroyed. Score: " + score
-        );
-
-    }
+            addLog(
+                "Asteroid defense system activated."
+            );
 
 
-
-    function asteroidMissed(asteroid) {
-
-        if (!document.body.contains(asteroid)) {
-            return;
-        }
-
-
-        asteroid.remove();
-
-
-        shields -= 10;
-
-
-        if (shields < 0) {
-            shields = 0;
-        }
-
-
-        document.getElementById("shields").textContent =
-            shields;
-
-
-        addLog(
-            "Asteroid impact! Shields at "
-            + shields
-            + "%."
-        );
-
-
-        if (shields <= 0) {
-
-            endGame();
+            asteroidSpawner =
+                setInterval(createAsteroid, 1000);
 
         }
 
-    }
+
+
+        function createAsteroid() {
+
+            if (!gameRunning) {
+                return;
+            }
+
+
+            const field =
+                document.getElementById("spaceField");
+
+
+            const asteroid =
+                document.createElement("div");
+
+
+            asteroid.className =
+                "asteroid";
+
+
+            const size =
+                Math.floor(Math.random() * 35) + 35;
+
+
+            asteroid.style.width =
+                size + "px";
+
+
+            asteroid.style.height =
+                size + "px";
+
+
+            const maxTop =
+                field.clientHeight - size;
+
+
+            asteroid.style.top =
+                Math.random() * maxTop + "px";
+
+
+            const speed =
+                Math.random() * 4 + 4;
+
+
+            asteroid.style.animationDuration =
+                speed + "s";
+
+
+            asteroid.onclick =
+                function() {
+
+                    destroyAsteroid(
+                        asteroid
+                    );
+
+                };
+
+
+            asteroid.addEventListener(
+                "animationend",
+
+                function() {
+
+                    asteroidMissed(
+                        asteroid
+                    );
+
+                }
+            );
+
+
+            field.appendChild(
+                asteroid
+            );
+
+        }
 
 
 
-    function endGame() {
+        function destroyAsteroid(asteroid) {
 
-        gameRunning = false;
-
-
-        clearInterval(
-            asteroidSpawner
-        );
+            if (!gameRunning) {
+                return;
+            }
 
 
-        document.getElementById("gameMessage").textContent =
-
-            "MISSION FAILED — FINAL SCORE: "
-            + score;
+            score += 10;
 
 
-        addLog(
-            "Shield failure. Asteroid defense system offline."
-        );
+            document.getElementById("score").textContent =
+                score;
 
-
-        const asteroids =
-            document.querySelectorAll(".asteroid");
-
-
-        asteroids.forEach(function(asteroid) {
 
             asteroid.remove();
 
-        });
 
-    }
+            addLog(
+                "Asteroid destroyed. Score: " + score
+            );
 
-
-
-    /* --------------------------
-       PAGE STARTUP
-    -------------------------- */
-
-    window.onload = function() {
-
-        document.getElementById("fuelBar")
-            .style.width = "82%";
+        }
 
 
-        document.getElementById("oxygenBar")
-            .style.width = "94%";
+
+        function asteroidMissed(asteroid) {
+
+            if (!document.body.contains(asteroid)) {
+                return;
+            }
 
 
-        document.getElementById("powerBar")
-            .style.width = "76%";
+            asteroid.remove();
 
-    };
 
-</script>
+            shields -= 10;
+
+
+            if (shields < 0) {
+                shields = 0;
+            }
+
+
+            document.getElementById("shields").textContent =
+                shields;
+
+
+            addLog(
+                "Asteroid impact! Shields at "
+                + shields
+                + "%."
+            );
+
+
+            if (shields <= 0) {
+
+                endGame();
+
+            }
+
+        }
+
+
+
+        function endGame() {
+
+            gameRunning = false;
+
+
+            clearInterval(
+                asteroidSpawner
+            );
+
+
+            document.getElementById("gameMessage").textContent =
+
+                "MISSION FAILED — FINAL SCORE: "
+                + score;
+
+
+            addLog(
+                "Shield failure. Asteroid defense system offline."
+            );
+
+
+            const asteroids =
+                document.querySelectorAll(".asteroid");
+
+
+            asteroids.forEach(function(asteroid) {
+
+                asteroid.remove();
+
+            });
+
+        }
+
+
+
+        /* -----------------------------------
+           PAGE STARTUP
+        ----------------------------------- */
+
+        window.onload = function() {
+
+            document.getElementById("fuelBar")
+                .style.width = "82%";
+
+
+            document.getElementById("oxygenBar")
+                .style.width = "94%";
+
+
+            document.getElementById("powerBar")
+                .style.width = "76%";
+
+        };
+
+    </script>
 
 </body>
 
