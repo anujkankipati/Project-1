@@ -3,47 +3,247 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - Anuj Kankipati</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Anuj Kankipati</title>
+
+    <link rel="stylesheet" href="style1.css">
 </head>
 
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="qualifications.html">Qualifications</a>
-        <a href="activities.html">Activities</a>
-        <a href="sandbox.html">Sandbox</a>
-    </nav>
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a class="logo" href="index.html">
+                AK
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a class="active" href="portfolio.html">Portfolio</a>
+                <a href="qualifications.html">Qualifications</a>
+                <a href="activities.html">Activities</a>
+                <a href="sandbox.html">Sandbox</a>
+            </div>
+
+        </nav>
+
+    </header>
+
 
     <main>
-        <h1>Portfolio</h1>
 
-        <p>
-            This page highlights some of the technical projects I have
-            completed and projects I would like to continue developing.
+        <section class="page-header">
+
+            <p class="section-label">
+                My Work
+            </p>
+
+            <h1>
+                Portfolio
+            </h1>
+
+            <p>
+                These projects represent my growing experience with
+                web development, software engineering, automation,
+                and cloud computing.
+            </p>
+
+        </section>
+
+
+        <!-- CLINIC WEBSITE -->
+
+        <section class="portfolio-project">
+
+            <div class="project-image-container">
+
+                <img
+                    src="clinic-website.jpg"
+                    alt="Screenshot of the Alamo Liver Institute website"
+                    class="portfolio-image">
+
+            </div>
+
+
+            <div class="portfolio-project-info">
+
+                <p class="project-status">
+                    Completed Project
+                </p>
+
+                <h2>
+                    Alamo Liver Institute Website
+                </h2>
+
+                <p>
+                    I developed a professional website for Alamo Liver
+                    Institute using HTML, CSS, and JavaScript. The goal
+                    was to create a modern website that presents important
+                    clinic information clearly and makes it easier for
+                    patients to find services and resources.
+                </p>
+
+                <h3>
+                    What I Worked On
+                </h3>
+
+                <ul>
+                    <li>
+                        Built multiple pages for clinic information and services.
+                    </li>
+
+                    <li>
+                        Created clear navigation between important sections.
+                    </li>
+
+                    <li>
+                        Designed the layout and styling for a professional
+                        medical website.
+                    </li>
+
+                    <li>
+                        Used JavaScript to add interactive features.
+                    </li>
+                </ul>
+
+                <h3>
+                    Technologies
+                </h3>
+
+                <div class="technology-list">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <a
+                    class="button button-primary portfolio-button"
+                    href="https://alamoliver.com"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Live Website
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- EMAIL TRIAGE PROJECT -->
+
+        <section class="portfolio-project">
+
+            <div class="portfolio-project-info">
+
+                <p class="project-status">
+                    Planned Project
+                </p>
+
+                <h2>
+                    Intelligent Email Triage System
+                </h2>
+
+                <p>
+                    I am planning a system that will help organize incoming
+                    clinic emails based on priority. The goal is to reduce
+                    the amount of time staff members spend sorting through
+                    routine messages while making sure important emails
+                    receive human attention.
+                </p>
+
+                <h3>
+                    Project Goals
+                </h3>
+
+                <ul>
+                    <li>
+                        Organize incoming emails based on priority.
+                    </li>
+
+                    <li>
+                        Identify simple requests that could receive
+                        automatic responses.
+                    </li>
+
+                    <li>
+                        Send higher-priority messages to clinic staff.
+                    </li>
+
+                    <li>
+                        Explore cloud services for hosting and automation.
+                    </li>
+                </ul>
+
+                <h3>
+                    Technologies I Am Exploring
+                </h3>
+
+                <div class="technology-list">
+                    <span>AWS</span>
+                    <span>Cloud Computing</span>
+                    <span>Automation</span>
+                </div>
+
+            </div>
+
+
+            <div class="planned-project-box">
+
+                <p class="planned-label">
+                    PROJECT IDEA
+                </p>
+
+                <h3>
+                    Email → Priority → Response
+                </h3>
+
+                <p>
+                    Routine messages could receive automated responses,
+                    while higher-priority messages would be sent to staff
+                    members for review.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <a class="footer-logo" href="index.html">
+                    AK
+                </a>
+
+                <p>
+                    Computer Science Student at Texas A&amp;M University
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="qualifications.html">Qualifications</a>
+                <a href="activities.html">Activities</a>
+                <a href="sandbox.html">Sandbox</a>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Anuj Kankipati
         </p>
 
-        <section>
-            <h2>Personal Website</h2>
-
-            <p>
-                I am developing this personal website using HTML, CSS,
-                and JavaScript. The project is helping me gain experience
-                with web development, Git, GitHub, and deploying a website
-                to a server.
-            </p>
-        </section>
-
-        <section>
-            <h2>Future Projects</h2>
-
-            <p>
-                I plan to continue adding projects that demonstrate my
-                programming, problem-solving, and software development skills.
-            </p>
-        </section>
-    </main>
+    </footer>
 
 </body>
 
