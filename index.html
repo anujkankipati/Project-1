@@ -3,43 +3,397 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Anuj Kankipati</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anuj Kankipati | Portfolio</title>
+
+    <link rel="stylesheet" href="style1.css">
 </head>
 
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="qualifications.html">Qualifications</a>
-        <a href="activities.html">Activities</a>
-        <a href="sandbox.html">Sandbox</a>
-    </nav>
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a class="logo" href="index.html">
+                AK
+            </a>
+
+            <div class="nav-links">
+                <a class="active" href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="qualifications.html">Qualifications</a>
+                <a href="activities.html">Activities</a>
+                <a href="sandbox.html">Sandbox</a>
+            </div>
+
+        </nav>
+
+    </header>
+
 
     <main>
-        <h1>Anuj Kankipati</h1>
 
-        <h2>Computer Science Student at Texas A&M University</h2>
+        <!-- HERO SECTION -->
 
-        <p>
-            Welcome to my personal website. I am a computer science student
-            interested in software development, technology, and building
-            meaningful projects.
-        </p>
+        <section class="hero">
 
-        <p>
-            This website highlights my projects, qualifications, interests,
-            and experiences.
-        </p>
+            <div class="hero-content">
 
-        <h2>Explore My Website</h2>
+                <p class="eyebrow">
+                    Hello, I'm
+                </p>
 
-        <p>
-            Visit my portfolio to see projects I have worked on, learn about
-            my technical skills and qualifications, or explore my activities
-            and interests outside of academics.
-        </p>
+                <h1>
+                    Anuj Kankipati
+                </h1>
+
+                <h2>
+                    Junior Computer Science Student
+                    <span>at Texas A&amp;M University</span>
+                </h2>
+
+                <p class="focus">
+                    Software Engineering
+                    <span class="dot">•</span>
+                    Cloud Computing
+                </p>
+
+                <p class="hero-description">
+                    I am a junior Computer Science student at Texas A&amp;M
+                    University interested in software engineering and cloud
+                    computing. I enjoy building practical projects and learning
+                    how real software systems are designed, developed, and
+                    deployed. I am currently looking for opportunities where
+                    I can strengthen my technical skills while contributing to
+                    meaningful work.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        class="button button-primary"
+                        href="portfolio.html">
+                        View My Work
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="qualifications.html">
+                        View Resume
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="image-decoration"></div>
+
+                <div class="image-frame">
+
+                    <img
+                        src="profile.jpg"
+                        alt="Portrait of Anuj Kankipati"
+                        class="profile-image">
+
+                </div>
+
+                <div class="student-badge">
+                    <span class="badge-dot"></span>
+
+                    <div>
+                        <strong>Texas A&amp;M</strong>
+                        <p>Computer Science</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- QUICK INTRO -->
+
+        <section class="about-strip">
+
+            <div class="about-item">
+                <p class="about-number">01</p>
+
+                <div>
+                    <h3>Software</h3>
+                    <p>
+                        Interested in building reliable and useful
+                        software applications.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="about-item">
+                <p class="about-number">02</p>
+
+                <div>
+                    <h3>Cloud</h3>
+                    <p>
+                        Exploring cloud computing and scalable
+                        application infrastructure.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="about-item">
+                <p class="about-number">03</p>
+
+                <div>
+                    <h3>Growth</h3>
+                    <p>
+                        Continuously strengthening my skills through
+                        coursework and hands-on projects.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- FEATURED WORK -->
+
+        <section class="featured-work">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">
+                        Featured Work
+                    </p>
+
+                    <h2>
+                        Projects &amp; Technical Interests
+                    </h2>
+                </div>
+
+                <a
+                    class="section-link"
+                    href="portfolio.html">
+                    View Portfolio →
+                </a>
+
+            </div>
+
+
+            <div class="project-grid">
+
+                <!-- CLINIC WEBSITE -->
+
+                <article class="project-card featured-project">
+
+                    <div class="project-top">
+
+                        <p class="project-status">
+                            Completed Project
+                        </p>
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Medical Clinic Website
+                    </h3>
+
+                    <p>
+                        Developed a professional website for a medical clinic
+                        using HTML, CSS, and JavaScript. The website focuses on
+                        clear presentation of clinic information and gives
+                        patients convenient access to important services and
+                        resources.
+                    </p>
+
+                    <div class="technology-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="portfolio.html">
+                        Learn More →
+                    </a>
+
+                </article>
+
+
+
+                <!-- EMAIL SYSTEM -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <p class="project-status">
+                            Planned Project
+                        </p>
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Intelligent Email Triage System
+                    </h3>
+
+                    <p>
+                        Planning a system that can organize incoming clinic
+                        emails based on priority. The goal is to automatically
+                        handle simple requests while directing more important
+                        messages to staff members. I am currently exploring AWS
+                        and other cloud technologies for the implementation.
+                    </p>
+
+                    <div class="technology-list">
+                        <span>AWS</span>
+                        <span>Cloud</span>
+                        <span>Automation</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="portfolio.html">
+                        View Project Plan →
+                    </a>
+
+                </article>
+
+
+
+                <!-- TECHNICAL FOCUS -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <p class="project-status">
+                            Current Focus
+                        </p>
+
+                        <span class="project-number">
+                            03
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Technical Growth
+                    </h3>
+
+                    <p>
+                        Continuing to strengthen my programming,
+                        problem-solving, software development, and systems
+                        knowledge through coursework and hands-on experience.
+                    </p>
+
+                    <div class="technology-list">
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>C++</span>
+                        <span>Git</span>
+                        <span>Linux</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="qualifications.html">
+                        View Qualifications →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CALL TO ACTION -->
+
+        <section class="cta">
+
+            <div>
+
+                <p class="section-label">
+                    Explore
+                </p>
+
+                <h2>
+                    Learn more about my work and experience.
+                </h2>
+
+            </div>
+
+            <div class="cta-buttons">
+
+                <a
+                    class="button button-primary"
+                    href="portfolio.html">
+                    Portfolio
+                </a>
+
+                <a
+                    class="button button-secondary"
+                    href="qualifications.html">
+                    Qualifications
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
+
+
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div>
+                <a
+                    class="footer-logo"
+                    href="index.html">
+                    AK
+                </a>
+
+                <p>
+                    Computer Science Student at Texas A&amp;M University
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="portfolio.html">Portfolio</a>
+                <a href="qualifications.html">Qualifications</a>
+                <a href="activities.html">Activities</a>
+                <a href="sandbox.html">Sandbox</a>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Anuj Kankipati
+        </p>
+
+    </footer>
 
 </body>
 
