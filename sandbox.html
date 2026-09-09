@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mission Control</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101820;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px;
+            background-color: #1d2d3a;
+        }
+
+        main {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1d2d3a;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Space Mission Control</h1>
+        <p>Mission Dashboard</p>
+    </header>
+
+    <main>
+
+        <h2>Mission Status</h2>
+
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>Mission</h3>
+                <p>Orion Explorer</p>
+            </div>
+
+            <div class="card">
+                <h3>Distance</h3>
+                <p>384,400 km</p>
+            </div>
+
+            <div class="card">
+                <h3>Status</h3>
+                <p>Operational</p>
+            </div>
+
+            <div class="card">
+                <h3>Fuel</h3>
+                <p>82%</p>
+            </div>
+
+            <div class="card">
+                <h3>Crew</h3>
+                <p>4 Members</p>
+            </div>
+
+            <div class="card">
+                <h3>Communication</h3>
+                <p>Connected</p>
+            </div>
+
+        </div>
+
+        <button onclick="runSystemCheck()">Run System Check</button>
+
+        <p id="message"></p>
+
+    </main>
+
+    <script>
+        function runSystemCheck() {
+            document.getElementById("message").textContent =
+                "System check complete. All systems operational.";
+        }
+    </script>
+
+</body>
+
+</html>
